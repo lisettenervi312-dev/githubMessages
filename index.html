@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regalo para Anthony</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="center-controls">
+            <button  class="icon-btn" onclick="toggleMute()" id="musicToggle">
+                <span class="material-symbols-outlined" id="musicIcon">volume_up</span>
+            </button>
+            <button class="icon-btn">
+                <span class="material-symbols-outlined" id="themeToggle">contrast</span>
+            </button>
+        </div>
+        <button class="icon-btn reload-icon" onclick="location.reload()">
+            <span class="material-symbols-outlined">refresh</span>
+        </button>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="music.mp4" type="audio/mpeg">
+    </audio>
+
+    <main>
+        <section id="screen1" class="container">
+            <h1>Hey <strong>Anthony</strong></h1>
+            <br>
+            <div class="illustration"><img id="me" src="Carta.png" alt=""> </div>
+            <br>
+            <p>Tu amigo secreto tiene algo para ti</p>
+            <br>
+            <button id="btnStart" class="btn-main">Ver</button>
+        </section>
+
+        <section id="screen2" class="container hidden">
+            <h2 id="title">Enviando abrazo virtual</h2>
+            <br>
+            <div class="illustration">
+                <img id="me" src="penguin.svg" alt=""> 
+            </div>
+            <div class="box">
+                <div id="progressFill" class="loading-box"></div>
+            </div>
+            <h3 id="state-message">Cargando...</h3>
+            <h2 id="result-text">&nbsp;</h2>
+            <button id="btnCart" class="btn-main hidden">Leer carta</button>
+        </section>
+
+         <section id="screen3" class="container hidden">
+
+            <h2 id="title">Querido amigo secreto,</h2>
+            <br>
+            <p style="text-align: justify;">Luego de pensar un rato para encontrar las palabras correctas, quería empezar agradeciéndote por tu amistad y por todos los momentos compartidos 🤝✨. Admiro mucho la persona que eres, tanto en lo profesional como en la vida diaria. De corazón, 
+                espero que te vaya increíble en los nuevos proyectos que estás realizando 🚀💻 y que pases estas fiestas rodeado de tu familia 🎄💙.</p>
+            <br>
+            <p style="text-align: justify;">Realmente no pensé que nos llegaríamos a ver en persona ni que tendríamos varias cosas en común. Aunque a veces tengamos diferencias, siempre es agradable poder tener una conversación amena, compartir ideas y pasar un buen rato.
+            También espero que podamos seguir compartiendo más momentos, más videojuegos 🎮 y, por supuesto, que estés aquí para ver todo lo nuevo que venga de Silent Hill: los próximos juegos y la película que se estrena el próximo año 👻🎬.</p>
+            <button id="btnNext" class="btn-main">siguiente</button>
+        </section>
+
+         <section id="screen4" class="container hidden">
+
+            <p style="text-align: justify;">Por otro lado, quería agradecerte por todo lo que me has enseñado… aunque a veces lo hayas hecho suspirando, mirando al techo o cuestionando tus decisiones de vida por explicarme algo. </p>
+            <br>
+            <p style="text-align: justify;">Como buen desarrollador, tu código siempre es “impecable”, “claro” y “totalmente probado”…
+            y mi misión en la vida es demostrar lo contrario 😎🧪. <br>
+            No importa qué tan bien esté tu código, igual te lo voy a observar, cuestionar y romper… con cariño 💙🔍</p>
+            <br>
+            <p style="text-align: justify;">Espero que nuestra amistad dure tanto como tu amor por Linux 🐧☕,</p>
+            <p style="text-align: justify;">y que tu paciencia conmigo sea la misma que le tienes a Flutter 😄😌.</p>
+            <button id="btnNext2" class="btn-main">Guardar 🟥</button>
+        </section>
+
+         <section id="screen5" class="container hidden">
+            <h2 id="title">Funcionalidad no disponible :v</h2>
+            <br>
+            <div class="illustration">
+                <img id="me" src="sillet.gif" alt=""> 
+            <br>
+            <h2 id="title">Proximamente</h2>
+            </div>
+
+        
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

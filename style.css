@@ -1,0 +1,142 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --btn-bg: #222222;
+    --btn-text: #ffffff;
+    --border-color: #1a1a1a;
+    --bar-fill: blueviolet;
+    --bg-principal: #ffffff;
+  --color-iconos: #000000; /* Negro en modo claro */
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --btn-bg: #ffffff;
+    --btn-text: #1a1a1a;
+    --border-color: #ffffff;
+    --bg-principal: #1a1a1a;
+  --color-iconos: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Neue', cursive;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Controles superiores */
+.top-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    width: 100%;
+}
+
+.center-controls {
+    display: flex;
+    gap: 15px;/* El borde cambia con el tema */
+    padding: 4px 12px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-color); /* Esto hace que cambien de blanco a negro */
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.reload-icon {
+    position: absolute;
+    right: 40px;
+    font-size: 2rem;
+}
+
+/* Pantallas y Botón Ver */
+main { flex: 1; display: flex; justify-content: center; align-items: center; }
+.container { 
+text-align: center; 
+width: 90%;
+padding-left: 10%;
+padding-right: 10%;
+ }
+.hidden { display: none; }
+
+.btn-main {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    padding: 10px 45px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+/* Barra de Carga */
+.box {
+    display: inline-block;
+    border: 3px solid var(--text-color);
+    width: 180px;
+    height: 25px;
+    margin-top: 15px;
+}
+
+.loading-box {
+    height: 100%;
+    width: 0%;
+    background-color: var(--bar-fill);
+}
+
+.animate-progress { animation: loading 5s linear forwards; }
+
+@keyframes loading {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+.illustration img { 
+    width: 110px; 
+    margin-bottom: 10px;
+    filter: grayscale(1);
+}
+[data-theme="dark"] .illustration img { filter: invert(1) grayscale(1); }
+
+#state-message { font-size: 1rem; margin-top: 10px; opacity: 0.7; }
+
+.material-symbols-outlined {
+  color: var(--color-iconos); /* Aquí ocurre la magia del cambio de color */
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+
+.illustration img { 
+    width: 110px; 
+    margin-bottom: 10px;
+    transition: filter 0.4s ease; /* Transición suave igual que el fondo */
+}
+
+/* Efecto cuando el Modo Oscuro está activo */
+[data-theme="dark"] .illustration img { 
+    filter: invert(1) brightness(2); /* Invierte colores y ajusta el brillo */
+}
